@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Träningsplanering november–april · Söråkers FF F2013/2014</title>
+<style>
+:root{
+  --maroon:#922623;
+  --maroon-deep:#7C1F1D;
+  --ink:#1D1D1B;
+  --ink-2:#272522;
+  --chalk:#FFFFFF;
+  --chalk-dim:#C9B9B7;
+  --red:#CC3730;
+  --red-lt:#F0908A;
+  --line:rgba(255,255,255,.15);
+  --maxw:960px;
+  /* typskala */
+  --t-xs:.72rem;      /* 11,5 px · versala mikroetiketter */
+  --t-sm:.875rem;     /* 14 px   · meta och hjälptext */
+  --t-base:1.0625rem; /* 17 px   · brödtext, listor, tabeller */
+  --t-md:1.19rem;     /* 19 px   · ingresser och citat */
+  --t-h4:1.19rem;     /* 19 px   · kortrubriker */
+  --t-h3:1.375rem;    /* 22 px   · underrubriker */
+  --t-nav:.77rem;   /* menyn, hålls mindre för att rymmas */
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#922623!important}
+body{overflow-x:hidden}
+body{
+  margin:0;background:#922623!important;color:#FFFFFF!important;min-height:100vh;
+  font-family:"Source Serif 4",Iowan Old Style,Palatino,Georgia,serif;
+  font-size:var(--t-base);line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3,h4,.ui{font-family:"Familjen Grotesk",-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif}
+.mono{font-family:"Azeret Mono",ui-monospace,monospace}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line);padding:26px 0 22px}
+.eyebrow{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;font-weight:600}
+h1{font-size:clamp(2rem,7vw,3rem);line-height:1.02;margin:.35em 0 .2em;font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--chalk-dim);font-size:var(--t-md);max-width:46ch;margin:0}
+
+
+.mottagare{margin-top:20px;background:var(--ink);border-left:3px solid var(--red);padding:14px 17px;max-width:56ch}
+.mottagare b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;
+  font-size:var(--t-base);font-weight:600;margin-bottom:4px}
+.mottagare span{display:block;font-size:var(--t-sm);color:var(--chalk-dim)}
+.heroflex{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
+.crest{width:96px;height:auto;border:1px solid var(--line);flex:none}
+@media(max-width:560px){.crest{width:66px}.heroflex{gap:18px}}
+.stripes{height:8px;margin-top:24px;display:flex}
+.stripes::before,.stripes::after{content:"";flex:1}
+.stripes{background:repeating-linear-gradient(90deg,var(--red) 0 14px,#fff 14px 28px,var(--ink) 28px 42px)}
+header{border-bottom:0;padding-bottom:0}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:40;background:rgba(124,31,29,.95);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav ul{display:flex;flex-wrap:wrap;gap:0 2px;list-style:none;margin:0;padding:4px 0;overflow:visible}
+nav ul::-webkit-scrollbar{display:none}
+nav a{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-nav);letter-spacing:.01em;
+  color:var(--chalk-dim);text-decoration:none;padding:8px 9px;white-space:nowrap;display:block;
+  border-bottom:2px solid transparent}
+nav a[aria-current="true"]{color:var(--chalk);border-bottom-color:var(--red)}
+nav a:hover,nav a:focus-visible{color:var(--chalk)}
+nav{background:var(--ink)!important}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;border-bottom:1px solid var(--line);scroll-margin-top:64px;background:#922623}
+.rules li{background:var(--ink)!important}
+.snum{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-xs);color:#fff;letter-spacing:.1em;opacity:.75}
+h2{font-size:clamp(1.6rem,4.4vw,2rem);margin:.3em 0 .55em;font-weight:600;letter-spacing:-.015em}
+h3{font-size:var(--t-h3);margin:2em 0 .5em;font-weight:600;letter-spacing:-.005em}
+p{margin:0 0 1em}
+.lede{font-size:var(--t-md);color:var(--chalk-dim);max-width:62ch}
+
+/* ---------- spelidé ---------- */
+.idea{border-left:3px solid var(--red);padding:6px 0 6px 22px;margin:0 0 34px;
+  font-size:var(--t-md);line-height:1.55;max-width:34ch}
+.rules{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.rules li{background:var(--maroon);padding:16px 18px;display:flex;gap:16px;align-items:flex-start}
+.rules .n{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--red-lt);font-size:var(--t-sm);padding-top:.28em}
+
+/* ---------- pitch ---------- */
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;margin-bottom:6px}
+.toggle button{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;background:transparent;border:0;color:var(--chalk-dim);
+  padding:9px 15px;font-size:var(--t-sm);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--red);color:#fff;font-weight:600}
+.formlabel{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;color:var(--chalk-dim);font-size:var(--t-sm);margin:8px 0 6px}
+.rollnote{color:var(--chalk-dim);font-size:var(--t-sm);margin:0 0 16px;max-width:62ch}
+.pitchbox{position:relative;background:var(--ink);border:1px solid var(--line);padding:12px}
+.pitchbox::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 45% at 50% 8%,rgba(204,55,48,.28),transparent 70%)}
+svg.pitch{display:block;width:100%;height:auto;position:relative}
+.pl{cursor:pointer}
+.pl circle{fill:var(--ink-2);stroke:var(--chalk);stroke-width:.7;transition:fill .18s,stroke .18s}
+.pl text.num{fill:var(--chalk);font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:4.6px;text-anchor:middle}
+.pl text.lab{fill:var(--chalk-dim);font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:3.5px;text-anchor:middle}
+.pl:hover circle,.pl:focus-visible circle{fill:var(--red);stroke:#fff}
+.pl:hover text.num,.pl:focus-visible text.num{fill:#FFFFFF}
+.pl:hover text.lab,.pl:focus-visible text.lab{fill:var(--chalk)}
+.pl.on circle{fill:var(--red);stroke:#fff}
+.pl.on text.num{fill:#FFFFFF}
+.pl.on text.lab{fill:var(--chalk)}
+.pl:focus{outline:none}
+.pl:focus-visible circle{stroke-width:1.4}
+.tapline{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-sm);
+  color:var(--chalk-dim);margin:12px 0 0;text-align:center}
+.lagenote{display:none;background:var(--ink);border:1px solid var(--line);padding:19px 20px;margin-top:16px}
+.lagenote.on{display:block}
+.lagenote h4{margin:0 0 10px;font-size:var(--t-h4);font-weight:600}
+.lagenote p{margin:0 0 .8em;font-size:var(--t-base)}
+.lagenote p:last-child{margin-bottom:0}
+.lagerad{border-left:3px solid var(--line);padding:0 0 0 14px;margin:0 0 14px}
+.lagerad:last-of-type{margin-bottom:0}
+.lagerad span{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;
+  font-size:var(--t-xs);letter-spacing:.11em;text-transform:uppercase;color:var(--red-lt);margin-bottom:4px}
+.lagerad p{margin:0;font-size:var(--t-base)}
+.toggle button{white-space:nowrap}
+@media(max-width:520px){.toggle{flex-wrap:wrap}}
+.block{display:contents}
+:root{--line-sit:rgba(241,244,239,.38);--chalk-sit:#fff;--grau:#8A8582;--zon:rgba(204,55,48,.22)}
+/* modellen */
+.modell{display:grid;gap:14px;margin:20px 0 10px}
+@media(min-width:760px){.modell{grid-template-columns:1fr 110px 1fr;align-items:center}}
+.sida{display:grid;gap:9px;text-align:center}
+.sida>div{background:var(--ink);border:1px solid var(--line);padding:11px 12px;
+  font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-sm);font-weight:600}
+.sida .topp{background:var(--ink2);color:var(--chalk);font-size:var(--t-h4)}
+.sida.mork .topp{background:var(--red);color:#fff}
+.sida .par{display:grid;grid-template-columns:1fr 1fr;gap:9px;background:none;border:0;padding:0}
+.sida .par>div{background:var(--ink);border:1px solid var(--line);padding:11px 10px;
+  display:flex;align-items:center;justify-content:center}
+.sida.mork .par>div,.sida.mork .botten{border-color:rgba(204,55,48,.5)}
+.pil{text-align:center;font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--red-lt)}
+.pil span{display:block;padding:10px 4px;border-top:1px solid var(--red);border-bottom:1px solid var(--red)}
+
+/* skedesblock */
+.skede{display:grid;gap:16px;margin-top:26px}
+@media(min-width:860px){.skede{grid-template-columns:1fr 340px;align-items:start}}
+.vadar{color:var(--chalk-dim);font-size:var(--t-base);margin:0 0 .7em}
+.skedelista{margin:0;padding-left:18px}
+.skedelista li{margin-bottom:8px;font-size:var(--t-base)}
+.alternativ{list-style:none;counter-reset:alt;margin:0 0 .9em;padding:0}
+.alternativ li{counter-increment:alt;position:relative;padding-left:30px;margin-bottom:8px;font-size:var(--t-base)}
+.alternativ li::before{content:counter(alt);position:absolute;left:0;top:0;
+  font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-weight:700;
+  font-size:var(--t-sm);color:var(--red-lt)}
+.notis{margin:0 0 .8em;font-size:var(--t-base)}
+.notis:last-child{margin-bottom:0}
+.sit-bred{margin-top:18px}
+.sit-bred svg{max-height:300px;margin:0 auto}
+.sit{margin:0;background:var(--ink);border:1px solid var(--line);padding:14px}
+.sit svg{display:block;width:100%;height:auto;max-height:420px}
+.sit figcaption{margin-top:12px}
+.sit-titel{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;
+  font-size:var(--t-h4);font-weight:600;color:var(--red-lt);margin-bottom:5px}
+.sit-text{display:block;font-size:var(--t-base)}
+.sit-nr{fill:#fff;font-family:"Familjen Grotesk",-apple-system,sans-serif;font-size:3.6px;
+  font-weight:700;text-anchor:middle}
+.sit-txt{fill:var(--chalk-dim);font-family:"Familjen Grotesk",-apple-system,sans-serif;
+  font-size:3.2px;text-anchor:middle}
+.sit-zon{fill:var(--red-lt);font-family:"Familjen Grotesk",-apple-system,sans-serif;
+  font-size:3px;text-anchor:middle;letter-spacing:.3px}
+.printplaner{display:none}
+.kortplan{display:none}
+.rollpanel:empty{display:none}
+.rollpanel{margin-top:14px}
+.rollpanel .card{border-color:var(--red)}
+.rollpanel .stang{float:right;background:transparent;border:1px solid var(--line);color:var(--chalk-dim);
+  font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-sm);
+  padding:4px 10px;cursor:pointer;margin-left:auto}
+.rollpanel .stang:hover{border-color:var(--red);color:var(--chalk)}
+.rollpanel .card header{width:100%}
+.formnote{display:none;background:var(--ink);border:1px solid var(--line);padding:19px 20px;margin-top:16px}
+.formnote.on{display:block}
+.formnote h4{margin:0 0 10px;font-size:var(--t-h4);font-weight:600}
+.formnote p{margin:0 0 .8em;font-size:var(--t-base)}
+.formnote p:last-child{margin-bottom:0}
+.formnote ul{margin:0 0 .9em;padding-left:18px;font-size:var(--t-base)}
+.formnote li{margin-bottom:7px}
+.formnote .varning{border-left:3px solid var(--red);padding-left:14px;margin-top:14px;color:var(--chalk-dim)}
+.bridge{margin-top:16px}
+.bridge table{min-width:0}
+.bridge td:first-child{color:var(--chalk-dim)}
+.bridge tr.ny td{background:rgba(204,55,48,.14)}
+.hint{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-sm);color:var(--chalk-dim);margin:12px 0 0}
+
+/* ---------- rollkort ---------- */
+.cards{display:grid;gap:14px;margin-top:26px}
+.card{background:var(--ink);border:1px solid var(--line);padding:20px 20px 18px;scroll-margin-top:70px}
+.card.on{border-color:var(--red)}
+.card header{border:0;padding:0;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.card h4{font-size:var(--t-h4);margin:0;font-weight:600}
+.card .nr{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-sm);color:var(--red-lt);
+  border:1px solid var(--line);padding:2px 7px}
+.one{font-style:italic;color:var(--chalk);margin:12px 0 16px;font-size:var(--t-md)}
+.split{display:grid;gap:18px;margin-top:4px}
+@media(min-width:640px){.split{grid-template-columns:1fr 1fr;gap:26px}}
+.split h5{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--chalk-dim);margin:0 0 8px;font-weight:600}
+.split ul{margin:0;padding-left:17px}
+.split li{margin-bottom:7px;font-size:var(--t-base)}
+.done{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:var(--t-base);color:var(--chalk-dim)}
+.done b{color:var(--red-lt);font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-weight:600;font-size:var(--t-sm);
+  letter-spacing:.04em;text-transform:uppercase}
+.phrase{display:inline-block;margin-top:12px;font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  background:rgba(204,55,48,.16);border:1px solid rgba(204,55,48,.5);color:var(--red-lt);
+  padding:5px 11px;font-size:var(--t-sm)}
+
+/* ---------- generic blocks ---------- */
+.karta{display:grid;gap:20px;margin:18px 0 8px}
+@media(min-width:760px){.karta{grid-template-columns:300px minmax(0,1fr);align-items:start}}
+.kartabox{background:var(--ink);border:1px solid var(--line);padding:14px}
+.kartabox svg{display:block;width:100%;height:auto}
+.zonlista h4{margin:0 0 10px;font-size:var(--t-h4);font-weight:600}
+.zonlista + .zonlista{margin-top:22px}
+.zon{border-left:3px solid var(--red);padding-left:13px;margin-bottom:12px}
+.zon:last-child{margin-bottom:0}
+.zon > b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;font-size:var(--t-base)}
+.zon p{margin:2px 0 0;font-size:var(--t-base);color:var(--chalk-dim)}
+.skeden{display:grid;gap:14px;margin:18px 0 8px}
+@media(min-width:760px){.skeden{grid-template-columns:minmax(0,1fr) 165px minmax(0,1fr);gap:18px;align-items:start}}
+.sked-sida{background:var(--ink);border:1px solid var(--line);padding:18px}
+.sked-sida > h4{margin:0 0 4px;font-size:var(--t-h4);font-weight:600}
+.sked-sida > .vem{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim);margin:0 0 14px}
+.sked{border-left:3px solid var(--line);padding:0 0 0 13px;margin-bottom:14px}
+.sked:last-child{margin-bottom:0}
+.sked.fokus{border-left-color:var(--red)}
+.sked > b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;font-size:var(--t-base)}
+.sked p{margin:3px 0 0;font-size:var(--t-base);color:var(--chalk-dim)}
+.sked .flagga{display:inline-block;margin-top:6px;font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-size:var(--t-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--red-lt)}
+.omst{background:var(--red);color:#fff;padding:18px 14px;text-align:center;align-self:center}
+.omst b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;font-size:var(--t-h4)}
+.omst p{margin:6px 0 0;font-size:var(--t-sm)}
+.omst .pil{font-size:1.5rem;line-height:1;display:block;margin-bottom:6px}
+.grid3{display:grid;gap:16px}
+@media(min-width:720px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.box{background:var(--ink);border:1px solid var(--line);padding:18px}
+.box h4{margin:0 0 10px;font-size:var(--t-h4);font-weight:600}
+.box ul{margin:0;padding-left:17px}
+.box li{font-size:var(--t-base);margin-bottom:7px}
+
+.why{display:grid;gap:0;border:1px solid var(--line);margin-top:8px}
+.why > div{padding:17px 19px;border-bottom:1px solid var(--line);background:var(--ink)}
+.why > div:last-child{border-bottom:0}
+.why > div > b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;margin-bottom:5px;font-weight:600}
+.why p{margin:0;font-size:var(--t-base);color:var(--chalk-dim)}
+.why .keep{background:#2A1A19}
+.why .keep b{color:var(--red-lt)}
+
+/* ---------- faser ---------- */
+.temakort{border:1px solid var(--red);border-left-width:3px;padding:16px 18px;margin:0 0 18px}
+.temakort dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;margin:0}
+@media(max-width:520px){.temakort dl{grid-template-columns:1fr;gap:2px}
+  .temakort dd{margin-bottom:11px}}
+.temakort dt{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim);padding-top:.3em}
+.temakort dd{margin:0;font-size:var(--t-base)}
+.temakort dd.krav{color:var(--red-lt)}
+.koppling{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.koppling span{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);
+  letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:5px 10px;color:var(--chalk-dim)}
+.koppling span b{color:var(--red-lt);font-weight:600}
+.tidsaxel{margin:18px 0 26px}
+.tidsaxel table{min-width:0}
+.tidsaxel td:first-child{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color:var(--red-lt);font-size:var(--t-sm);white-space:nowrap}
+.tidsaxel tr.nu td{background:rgba(204,55,48,.2)}
+.tidsaxel tr.markor td{background:var(--maroon-deep);font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-size:var(--t-sm);color:var(--chalk)}
+.tidsaxel tr.markor td:first-child{color:var(--chalk-dim)}
+.tidsaxel tr.cuplinje td{border-bottom:2px solid var(--red)}
+.tidsaxel td,.tidsaxel th{hyphens:auto}
+.phase{background:var(--ink);border:1px solid var(--line);padding:22px;margin-bottom:16px}
+.phase .tag{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--t-xs);color:var(--red-lt);letter-spacing:.08em}
+.phase h3{margin:.4em 0 .1em;font-size:var(--t-h3)}
+.phase .when{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;color:var(--chalk-dim);font-size:var(--t-sm);margin-bottom:14px}
+.blockrubrik{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);
+  letter-spacing:.13em;text-transform:uppercase;color:var(--chalk-dim);margin:24px 0 0;font-weight:600}
+.blocktab{margin:10px 0 0}
+.blocktab .ex{display:block;margin-top:6px;font-size:var(--t-sm);color:var(--red-lt)}
+.blocktab .ex::before{content:"Kan vara: ";color:var(--chalk-dim)}
+.blocktab table{min-width:0}
+.blocktab td,.blocktab th{hyphens:auto}
+.blocktab td:first-child{width:1%;padding-right:8px}
+.blocktab td:first-child b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-weight:600;display:block}
+.blocktab .min{display:block;margin-top:3px;font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:var(--t-sm);color:var(--red-lt);white-space:nowrap}
+.blocktab td,.blocktab th{padding:11px 10px}
+.blocktab table{min-width:0}
+.blocktab td,.blocktab th{hyphens:auto}
+.blocktab td:first-child{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-size:var(--t-sm);color:var(--chalk-dim);white-space:nowrap}
+.blocktab tr.tema td{background:rgba(204,55,48,.16)}
+.drills{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.drills a{display:block;border:1px solid var(--line);padding:11px 14px;text-decoration:none;
+  color:var(--chalk);font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-base);transition:border-color .15s,background .15s}
+.drills a:hover,.drills a:focus-visible{border-color:var(--red);background:rgba(204,55,48,.1)}
+.drills a small{display:block;color:var(--chalk-dim);font-size:var(--t-sm);margin-top:3px}
+.drills a::after{content:"↗";float:right;color:var(--red-lt)}
+
+
+.ovning{border:1px solid var(--red);background:var(--ink);margin-top:14px}
+.ovning > summary{padding:14px 17px;font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;
+  font-weight:600;font-size:var(--t-h4);color:var(--chalk);cursor:pointer}
+.ovning > summary span{display:block;font-weight:400;font-size:var(--t-sm);color:var(--red-lt);margin-top:3px}
+.ovning .body{padding:0 17px 18px}
+.ovning dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 14px;font-size:var(--t-base)}
+.ovning dt{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;color:var(--chalk-dim);
+  font-size:var(--t-xs);letter-spacing:.09em;text-transform:uppercase;padding-top:.25em}
+.ovning dd{margin:0}
+.ovning h6{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);
+  letter-spacing:.11em;text-transform:uppercase;color:var(--chalk-dim);margin:14px 0 6px;font-weight:600}
+.ovning ol,.ovning ul{margin:0;padding-left:18px;font-size:var(--t-base)}
+.ovning li{margin-bottom:6px}
+.ovning .kalla{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:var(--t-sm);color:var(--chalk-dim)}
+.ovning .kalla a{color:var(--red-lt)}
+
+
+.antal{width:100%;border-collapse:collapse;font-size:var(--t-base);margin:6px 0 0;min-width:0}
+.antal th,.antal td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.antal th{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--chalk-dim);font-weight:600}
+.antal td:first-child{font-family:"Azeret Mono",ui-monospace,monospace;color:var(--red-lt);white-space:nowrap}
+
+/* ---------- tabell ---------- */
+.tablewrap{overflow-x:auto;margin-top:6px;background:var(--ink);border:1px solid var(--line)}
+table{margin:0;font-size:var(--t-base)}
+table{width:100%;border-collapse:collapse;font-size:var(--t-base);min-width:520px}
+th,td{text-align:left;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-xs);letter-spacing:.11em;text-transform:uppercase;
+  color:var(--chalk-dim);font-weight:600;border-bottom-color:var(--chalk-dim)}
+td.num{font-family:"Azeret Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--red-lt);font-size:var(--t-sm);white-space:nowrap}
+td a{color:var(--chalk);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+tr.cup td{background:var(--red)}
+tr.cup td.num{font-weight:500}
+
+/* ---------- ordlista ---------- */
+details{border:1px solid var(--line);margin-bottom:8px;background:var(--ink)}
+summary{padding:14px 18px;cursor:pointer;font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-weight:600;font-size:var(--t-h4)}
+summary::marker{color:var(--red-lt)}
+details p{margin:0;padding:0 18px 16px;color:var(--chalk-dim);font-size:var(--t-base)}
+
+.callout{border:1px solid var(--red);border-left-width:3px;padding:16px 19px;margin-top:26px;background:var(--ink)}
+.callout b{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;color:var(--red-lt)}
+.callout p{margin:0;font-size:var(--t-base)}
+.callout p + p{margin-top:.7em}
+
+.vidare{margin:26px 0 10px}
+.vidare-lista{margin-bottom:0}
+footer .drills a{background:rgba(0,0,0,.18)}
+@media print{.vidare,.vidare-lista{display:none}}
+.uppdaterad{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;font-size:var(--t-sm);color:var(--chalk-dim)}
+footer{background:#922623;padding:44px 0 60px;color:var(--chalk-dim);font-size:var(--t-base)}
+footer a{color:var(--chalk-dim)}
+footer ul{padding-left:17px;margin:.6em 0 1.4em}
+footer li{margin-bottom:6px}
+
+.printbtn{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;background:transparent;border:1px solid var(--line);
+  color:var(--chalk-dim);padding:9px 15px;font-size:var(--t-sm);cursor:pointer;margin-top:20px}
+.printbtn:hover{border-color:var(--red);color:var(--red-lt)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+@media print{
+  @page{size:A4;margin:16mm 15mm 18mm}
+  html,body{background:#fff!important;color:#1a1a1a!important;font-size:10.5pt;line-height:1.5}
+  .wrap{max-width:none;padding:0}
+  nav,.toggle,.pitchbox,.formlabel,.tapline,.rollpanel,.lagenote,.printbtn,.hint,.legend{display:none!important}
+  .crest{width:54px;border:0;filter:none}
+  header{padding:0 0 10pt;border-bottom:2pt solid #922623}
+  .stripes{display:none}
+  .eyebrow{color:#922623!important;font-size:7.5pt}
+  h1{color:#922623!important;font-size:26pt;line-height:1.05;margin:4pt 0 6pt}
+  .sub{color:#444!important;font-size:10.5pt;max-width:none}
+  .mottagare{background:#f3f0ef!important;border-left:3pt solid #922623;border-top:0;border-right:0;border-bottom:0;padding:8pt 10pt;margin-top:10pt}
+  .mottagare b{color:#922623!important}
+  .mottagare span{color:#444!important}
+
+  section{border:0;padding:0;margin:0 0 12pt;background:#fff!important;break-inside:auto}
+  section:first-of-type{break-before:avoid}
+  /* inget block får brytas mitt itu */
+  .block,.grid3,.karta,.zonlista,.printplaner,.tablewrap,.why>div,.rules li,.callout,footer{break-inside:avoid}
+  .block{margin:0 0 12pt}
+  h2,h3{break-after:avoid;break-inside:avoid}
+  #spelsatt{break-before:page}
+  .modell{display:grid;grid-template-columns:1fr 70pt 1fr;gap:8pt;align-items:center;break-inside:avoid}
+  .sida>div{background:#f6f4f3!important;border:.5pt solid #d8d2d0!important;color:#1a1a1a!important;padding:6pt}
+  .sida .topp{background:#e7e2e0!important;color:#922623!important}
+  .sida.mork .topp{background:#922623!important;color:#fff!important}
+  .sida .par{background:none!important;border:0!important;padding:0!important}
+  .sida .par>div{background:#f6f4f3!important;border:.5pt solid #d8d2d0!important;color:#1a1a1a!important;padding:6pt}
+  .sida.mork .par>div{border-color:#e3c9c7!important}
+  .pil span{border-color:#CC3730!important;color:#922623!important}
+  .pil{color:#922623!important}
+  .skede{display:grid;grid-template-columns:1fr 200pt;gap:10pt;break-inside:avoid;margin-top:12pt}
+  .vadar{color:#555!important}
+  .skedelista li,.alternativ li,.notis{font-size:9.5pt;color:#1a1a1a!important}
+  .alternativ li::before{color:#922623!important}
+  .sit-bred{break-inside:avoid}
+  .sit-bred svg{max-height:150pt;margin:0 auto}
+  .sit{break-inside:avoid;padding:8pt;background:#1D1D1B!important;border:0!important}
+  .sit .sit-text{color:#e9e5e4!important}
+  .sit .sit-titel{color:#F0908A!important}
+  .sit-titel{font-size:11pt}
+  .sit-text{font-size:9.5pt}
+  .grid3>.box{break-inside:avoid}
+  .snum{color:#922623!important;opacity:1;font-size:7.5pt;letter-spacing:.14em}
+  h2{color:#922623!important;font-size:17pt;margin:14pt 0 6pt;break-after:avoid}
+  h3{color:#1a1a1a!important;font-size:12.5pt;margin:12pt 0 5pt;break-after:avoid}
+  .lede{color:#444!important;font-size:10.5pt;max-width:none}
+  .idea{max-width:none;font-size:13pt;border-left:3pt solid #CC3730!important;color:#1a1a1a!important;padding-left:12pt}
+  .rules li{padding:6pt 9pt}
+  .why>div{padding:7pt 10pt}
+
+  /* mörka ytor blir ljusa rutor */
+  .box,.why>div,.callout,.card,.zon,.sked,.tablewrap,.temakort,.drills a,.rules li,details{
+    background:#f6f4f3!important;border:.5pt solid #d8d2d0!important;color:#1a1a1a!important}
+  .box h4,.why>div>b,.callout b,.card h4,.zon>b,.sked>b{color:#922623!important}
+  .box li,.why p,.callout p,.zon p,.sked p,.rules li span{color:#1a1a1a!important}
+  .why .keep,.callout{border-left:2.5pt solid #CC3730!important}
+  .rules .n{color:#922623!important}
+
+  /* rollkort */
+  .cards{display:block}
+  .card{break-inside:avoid;margin:0 0 7pt;padding:8pt 10pt;position:relative;padding-right:74pt}
+  .kortplan{display:block!important;position:absolute;right:9pt;top:9pt;width:58pt;height:auto}
+  .lagerad p{margin:0}
+  .done{margin-top:7pt;padding-top:6pt}
+  .phrase{margin-top:7pt}
+  .card .stang{display:none}
+  .lagerad{border-left:2pt solid #CC3730!important;padding-left:9pt;margin-bottom:7pt}
+  .lagerad span{color:#922623!important;font-size:7.5pt}
+  .lagerad p{color:#1a1a1a!important;font-size:10pt}
+  .done{border-top:.5pt solid #d8d2d0;color:#444!important}
+  .done b{color:#922623!important}
+  .phrase{background:#fff!important;border:.5pt solid #CC3730!important;color:#922623!important}
+
+  /* tabeller */
+  table{min-width:0;font-size:9.5pt;break-inside:avoid}
+  th{color:#922623!important;border-bottom:.8pt solid #922623!important}
+  td{border-bottom:.5pt solid #e2dddb!important}
+  td.num,.antal td:first-child,.blocktab td:first-child{color:#922623!important}
+
+  /* rutnät sida vid sida */
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7pt}
+  .karta{display:grid;grid-template-columns:150pt 1fr;gap:12pt}
+  .skeden{display:grid;grid-template-columns:1fr auto 1fr;gap:8pt}
+  .omst{background:#922623!important;color:#fff!important}
+  .omst b,.omst p{color:#fff!important}
+
+  /* planskisser i utskrift */
+  .printplaner{display:grid!important;grid-template-columns:1fr 1fr 1fr;gap:10pt;margin:8pt 0 12pt;break-inside:avoid}
+  .plantitel{font-family:"Familjen Grotesk",Arial,sans-serif;font-size:8pt;font-weight:600;
+    text-transform:uppercase;letter-spacing:.1em;color:#922623!important;text-align:center;margin:0 0 4pt}
+  .miniplan{width:100%;height:auto;display:block}
+  .kartabox{background:#fff!important;border:.5pt solid #d8d2d0!important;padding:6pt}
+  .kartabox svg text{fill:#1a1a1a!important}
+
+  details{break-inside:avoid}
+  details p{color:#1a1a1a!important}
+  summary{color:#922623!important}
+  footer{background:#fff!important;color:#444!important;border-top:.5pt solid #d8d2d0;padding-top:8pt;font-size:9pt}
+  footer a{color:#922623!important;text-decoration:none}
+  footer a::after{content:" (" attr(href) ")";font-size:7.5pt;color:#888}
+  .uppdaterad{color:#888!important}
+  a{color:#1a1a1a!important;text-decoration:none}
+}
+</style>
+<style>
+@media(max-width:430px){section{scroll-margin-top:100px}}
+.temainne{padding:0 18px 18px}
+details.tema{scroll-margin-top:100px}
+.tema .when{margin:0 0 10px}
+.varfor{margin:0 0 1em;font-size:var(--t-base)}
+.tvakol{display:grid;gap:16px}
+@media(min-width:720px){.tvakol{grid-template-columns:1fr 1fr}}
+.etikett{font-family:"Familjen Grotesk",-apple-system,system-ui,sans-serif;display:block;
+  font-size:var(--t-xs);letter-spacing:.11em;text-transform:uppercase;color:var(--red-lt);margin:0 0 6px}
+.tvakol ul{margin:0;padding-left:18px}
+.tvakol li{margin-bottom:7px;font-size:var(--t-base)}
+.tvakol p{margin:0 0 1.1em;font-size:var(--t-base)}
+.tvakol p:last-child{margin-bottom:0}
+@media print{
+  .etikett{color:#922623!important}
+  details.tema{break-inside:avoid;background:#f6f4f3!important;border:.5pt solid #d8d2d0!important;
+    border-left:2.5pt solid #CC3730!important;margin-bottom:8pt}
+  details.tema > summary{color:#922623!important;font-size:12pt;padding:8pt 11pt 2pt;list-style:none}
+  details.tema > summary::marker,details.tema > summary::-webkit-details-marker{display:none}
+  .temainne{padding:0 11pt 9pt}
+  .tvakol{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
+  .tvakol li,.tvakol p,.varfor{font-size:9.5pt;color:#1a1a1a!important}
+  .drills a small{color:#555!important}
+  .drills a{color:#922623!important}
+  #schema,#ovningar{break-before:page}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap heroflex">
+    <img class="crest" src="data:image/jpeg;base64,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zSUtz8Hz3hXEYZutQ1iZPxj+BvxE+BvxTvfDvjbRp7MxSlLTUvLIt7kDoVIHeqnwm+NfxJ+CHi6XWvAGt3GnNMP31oJSIZD0yQeM8/pX7m/Cv9oz4EftxfBCP4c/GDT7LSvG81t5QafCt5nrATgg5JxX5kftP/sLfEb4AeKbzUtDs7rxd4HmmP2Se2UySomTjeccGvcsp6o/MJ8ydmrNHyL4/wDH3iz4mfE298WeMNUn1XVpizmWaQlYF9B3x14A717r+zd+yb8Qv2jPiRa2umWN1pvhIODf6xKGWJk4zsJHWvp79kr/AIJ5+IfiRcad8Qfi5v8ADXw/gAuVtH/dzzqOTuz/AA4HNfUv7SH7cXw++B/w5k+DP7NunWb64kZt3ubHHkW642kqf7/B60OUYLUqMXVagtz0vxJ4v/Z0/wCCdnwDbTPDcEOv/EeaDyQsWGupH2jBl9EyK/GD4rfF74oftNfEqTW/G+pSxaP55lt9PRyLePn+EZ64I61xhg8SeOvGsvinx3q15q2pTyktJNISzZPRs8Y967yCCG3iMcSrHGg/doq8DtivCxWPUItRP1nIeE61ZqtilaPYz9K0m00ayENqqEMMMZABJ+FanQAYwBwPXHvTh6yqpkZeGB+7TcMAAzB27kV8hUqTqyufuOGo4fCUvZ0kFFFFDa2OlKwUUUUigooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKadgCmyBWt9ssYkhJwVPenUd/UelJcyd0ROKqR5ZbHnmp+Gr3SNZj8ReFL650zWoJRLDLatteMjn5cV+o/7MX/BRywbwfD8Nv2irVNSt4ohBBfyRB2fHebNfn2CQ5YfePfFctrnhLTNbVWKi0nHPmRr1PqeRXv4bMPZK0j8oznhFYuo6mGVmfbH7V37f/iX4oT3fww+CzN4b8DxSfZ5ry0+SaVBxtGP4MY6epr4a0Hwf9ilNzqMpuL123NKzFiT1ySec1s6T4e0/R9NWK2jUz/xzFeT9B2re42gc5xzz1qcRmEqnwnZknClLBWniVzSQibFkIQYXtntR3P1oGAOlFeFeUpXkfpcYRjp0Ciiinc0ShF6IKKKKTSvcbs9QooooJCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="Söråkers FF klubbmärke">
+    <div>
+      <div class="eyebrow">Söråkers FF · Flickor 2013/2014</div>
+      <h1>Träningsplanering<br>november–april</h1>
+      <p class="sub">Vad vi tränar, varför, och när. Bygger på vår spelmodell för 9 mot 9.</p>
+    </div>
+  </div>
+  <div class="stripes" aria-hidden="true"></div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <ul>
+      <li><a href="#sa">Så tränar vi</a></li>
+      <li><a href="#alltid">Varje pass</a></li>
+      <li><a href="#schema">Teman</a></li>
+      <li><a href="#ovningar">Övningar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- SÅ TRÄNAR VI -->
+<section id="sa">
+  <div class="wrap">
+    <div class="snum">01 — SÅ TRÄNAR VI</div>
+    <h2>Teman i treveckorsperioder</h2>
+    <p class="lede">Vi tränar två gånger i veckan: onsdag 75 minuter och söndag 90 minuter, på stor 9 mot 9-yta. Säsongen delas i perioder med ett tema i taget. Det är förbundets rekommenderade upplägg för den här åldern: några få saker åt gången, tillräckligt länge för att det ska läras in och kunna förbättras.</p>
+
+    <div class="callout">
+      <p><b>Planen säger vad och varför. Vi väljer hur.</b></p>
+      <p>Varje tema har ett krav på övningen. <b>Vilken övning vi kör bestämmer vi själva.</b> Kravet är bara att övningen hör hemma i temat – är temat inlägg står vi inte och kör passningsövningar för att de är enkla att sätta upp.</p>
+      <p>Är en övning svår att genomföra: <b>byt övning, inte tema.</b></p>
+    </div>
+
+    <div class="callout">
+      <p><b>Första veckan i varje tema</b></p>
+      <p>Vi inleder med en kort genomgång för tjejerna: vad vi ska träna på och varför, och vad övningarna syftar till.</p>
+      <p>Sedan utvärderar vi tillsammans löpande och påminner. Vi berömmer när vi lyckas och upprepar det som inte går lika lätt.</p>
+    </div>
+
+    <h3>Ett pass på 75 respektive 90 minuter</h3>
+    <p class="lede">Samma fem delar varje träning. Övningarna varieras på respektive del och baseras på vilket tema vi har.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Del</th><th>Onsdag</th><th>Söndag</th><th>Innehåll</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Uppvärmning och knäkontroll</td><td class="num">15 min</td><td class="num">15 min</td><td>Igång med boll, sedan knäkontroll</td></tr>
+          <tr><td>2 · Rondo eller motsvarande</td><td class="num">10 min</td><td class="num">10 min</td><td>Passa och ta emot under press i liten grupp</td></tr>
+          <tr><td>3 · Teknik, bollkontroll och passning</td><td class="num">10 min</td><td class="num">10 min</td><td><b>Följer temat.</b> Den färdighet temat kräver</td></tr>
+          <tr><td>4 · Temaövning</td><td class="num">20 min</td><td class="num">30 min</td><td><b>Följer temat.</b> Se aktuellt tema</td></tr>
+          <tr><td>5 · Spel</td><td class="num">20 min</td><td class="num">25 min</td><td>Smålagsspel, spel med villkor och fritt spel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Fys kan läggas som ytterligare femton minuter sist på onsdagar. Efter nyår kan det bli ett eget pass.</p>
+
+    <h3>Olika många spelare</h3>
+    <p class="lede">Antalet varierar från gång till gång. Vi delar in i mindre grupper efter hur många vi är den dagen, och efter hur många ledare som är på plats.</p>
+    <div class="grid3">
+      <div class="box"><h4>Två grupper</h4><ul>
+        <li>Grupperna kör olika temaövningar och skiftar efter halva tiden</li>
+        <li>Samma sak gäller teknikdelen – ibland delar vi upp den i olika övningar</li>
+        <li>Vi strävar efter minst två ledare per grupp, så att någon kan coacha medan den andra håller igång</li>
+      </ul></div>
+      <div class="box"><h4>Tre grupper när vi är många</h4><ul>
+        <li>Två grupper spelar på helplan medan den tredje kör fys, sedan roterar vi</li>
+        <li>Fungerar bäst på söndagar när vi har mer tid till spel</li>
+      </ul></div>
+      <div class="box"><h4>Ingen kö</h4><ul>
+        <li>Håll ett högt tempo med flera stationer igång samtidigt</li>
+        <li>Hellre fler grupper som gör samma sak än en stor där alla väntar</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- VARJE PASS -->
+<section id="alltid">
+  <div class="wrap">
+    <div class="snum">02 — VARJE PASS</div>
+    <h2>Det som återkommer oavsett tema</h2>
+
+    <h3>Knäkontroll</h3>
+    <div class="callout">
+      <p>Programmet är framtaget av Svenska Fotbollförbundet, särskilt för flickfotboll. Förbundet anger att risken för främre korsbandsskada minskar med 64 procent om det genomförs två gånger i veckan i samband med uppvärmningen.</p>
+      <p>Kvalitet före antal. Hellre färre övningar rätt utförda.</p>
+    </div>
+    <ul class="drills">
+      <li><a href="https://www.svenskfotboll.se/svff/spelklar/knakontroll/" target="_blank" rel="noopener">Knäkontroll och Knäkontroll+<small>Övningar och instruktionsfilmer. Knäkontroll+ är den nyare versionen med stegringsnivåer</small></a></li>
+    </ul>
+
+    <h3>Fys</h3>
+    <p class="lede">Mycket av vår fysträning ingår i den vanliga träningen. Det gör det extra viktigt att välja övningar som skapar högt tempo och som utmanar alla.</p>
+    <div class="grid3">
+      <div class="box"><h4>Ligger i knäkontrollen</h4><ul>
+        <li>Enbensknäböj, bäckenlyft, hopp och landning, balans</li>
+        <li>Styrka med egen kroppsvikt. Inga vikter i den här åldern</li>
+      </ul></div>
+      <div class="box"><h4>Ligger i del 2 och 3</h4><ul>
+        <li>Löpteknik och riktningsförändringar</li>
+        <li>Koordination med boll är fortfarande koordination</li>
+      </ul></div>
+      <div class="box"><h4>Ligger i spelet</h4><ul>
+        <li>Kondition byggs bäst av smålagsspel på liten yta med korta vilor</li>
+        <li>Vill vi höja pulsen: minska ytan eller antalet spelare, inte öka tiden</li>
+      </ul></div>
+    </div>
+
+    <h3>Bollkontroll, teknik och passning</h3>
+    <p class="lede">Tio minuter varje pass. Vilken färdighet som tränas följer temat. Nedan är exempel – en bra övning tränar ofta flera av delarna samtidigt, särskilt när vi arbetar med passning och bollkontroll.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>När temat handlar om</th><th>Exempel på vad vi tränar</th></tr></thead>
+        <tbody>
+          <tr><td>Spelbarhet och speluppbyggnad</td><td>Första tillslaget. Ta med bollen åt sidan eller framåt i stället för att stanna den</td></tr>
+          <tr><td>Att driva bollen framåt</td><td>Driva i fart, finter, vända under press</td></tr>
+          <tr><td>Inlägg och avslut</td><td>Inläggsteknik för alla, och avslut på ett tillslag</td></tr>
+          <tr><td>Omställning</td><td>Passa i fart och ta emot i rörelse</td></tr>
+          <tr><td>1 mot 1 och försvarsspel</td><td>Kroppsställning, vända snabbt, första steget</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Målvakterna</h3>
+    <p class="lede">Ambitionen är tre till fyra spelare som både står i mål och spelar ute. Utgångspunkten är att de är med aktivt i övningarna.</p>
+    <div class="grid3">
+      <div class="box"><h4>En egen del i veckan</h4><ul>
+        <li>En gång per vecka ersätter vi del 2 eller 3 med målvaktsträning</li>
+        <li>Resten av passet är de med som vanligt, ute eller i mål i del 4 och 5</li>
+      </ul></div>
+      <div class="box"><h4>Aktiv före passiv</h4><ul>
+        <li>I övningar där bara någon enstaka boll når målet står en ledare i mål i stället</li>
+        <li>Då får målvakten spela i övningen och få bollkontakter</li>
+      </ul></div>
+      <div class="box"><h4>Med på passning och spel</h4><ul>
+        <li>En målvakt måste vara duktig med fötterna – det är hon som startar våra uppspel</li>
+        <li>Därför är det viktigt att hon är med på passningsövningar och i spel, inte bara i mål</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMAN -->
+<section id="schema">
+  <div class="wrap">
+    <div class="snum">03 — TEMAN</div>
+    <h2>Sju teman, november till april</h2>
+    <p class="lede">Varje tema är tre veckor, alltså sex pass. Temana följer spelmodellens skeden och ordningen är vald efter vad vi behöver mest: vi börjar med att få ut bollen och går vidare till att göra mål.</p>
+    <p class="lede">Nio mot nio är en ny spelform för de flesta, och mycket av inlärningen sker när vi spelar på träning – positioner, avstånd och när man ska flytta sig. Den kollektiva försvarsorganisationen coachar vi i spelet varje vecka i stället för att göra den till ett eget tema. Det vi tränar separat på försvarssidan är det individuella: duellspel, vinna boll, närkamper och att täcka yta.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tema</th><th>När</th><th>Vad</th><th>Skede</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>v46–48 · november</td><td><b>Spelbarhet och spelavstånd</b></td><td>Speluppbyggnad</td></tr>
+          <tr><td class="num">2</td><td>v49–51 · november–december</td><td><b>Tre vägar ut ur egen tredjedel</b></td><td>Speluppbyggnad</td></tr>
+          <tr><td class="num">3</td><td>v1–3 · januari</td><td><b>Driva bollen framåt och utmana</b></td><td>Komma till avslut</td></tr>
+          <tr><td class="num">4</td><td>v4–6 · januari–februari</td><td><b>Inlägg och bemanning i målytan</b></td><td>Komma till avslut</td></tr>
+          <tr><td class="num">5</td><td>v7–10 · februari–mars</td><td><b>Omställning – kontring och återerövring</b></td><td>Omställning</td></tr>
+          <tr><td class="num">6</td><td>v11–13 · mars</td><td><b>1 mot 1 och att möta fart</b></td><td>Försvarsspel</td></tr>
+          <tr><td class="num">7</td><td>v14–17 · april</td><td><b>Öppet tema – repetition och helhet</b></td><td>Alla skeden</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Uppehåll vecka 52 och 53. Veckonumren är ungefärliga – justera efter hallbokning och lov.</p>
+
+    <div class="callout">
+      <p><b>Ett utgångsläge, sedan löpande avstämning</b></p>
+      <p>Några av temana har en mätpunkt som räknas i spel på träning. Vi tar alla utgångslägen vid <b>säsongens första pass</b>, där vi spelar mycket för att komma igång, och hjälps åt att räkna under en stund.</p>
+      <p>Sedan stämmer vi av löpande när ett tema avslutas. Saker går in i varandra och utvecklingen sker under hela säsongen.</p>
+    </div>
+
+    <h3>Temana</h3>
+    <details class="tema" open>
+      <summary>1 · Spelbarhet och spelavstånd</summary>
+      <div class="temainne">
+        <div class="when">v46–48 · november · skede: Speluppbyggnad</div>
+        <p class="varfor">Innan vi kan träna passningsspel måste det finnas någon att passa till. Spelbarhet är en förutsättning för att kunna hantera alla spelets skeden.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Bollhållaren har alltid minst två öppna medspelare.</li>
+            <li>Ingen står bakom en motståndare och väntar.</li>
+            <li>Vi står i trianglar, aldrig tre på samma rad och höjd.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Övningen ska tvinga spelare utan boll att göra sig spelbara medan någon försöker täcka bort dem. Det måste finnas motstånd.</p>
+            <span class="etikett">Så vet vi att det sitter</span>
+            <p>I ett smålagsspel: räkna hur många gånger bollhållaren har minst två öppna alternativ.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>2 · Tre vägar ut ur egen tredjedel</summary>
+      <div class="temainne">
+        <div class="when">v49–51 · november–december · skede: Speluppbyggnad</div>
+        <p class="varfor">Vi vill ta oss ut med bollen och behålla den. Tre vägar finns: längs kanten, centralt till en omarkerad, eller lång boll på ytan. Alla kan hamna långt ner med bollen – det här gäller inte bara inspark och inte bara målvakten.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Den som har bollen längst ner har tre öppna alternativ.</li>
+            <li>Ytterbacken går ut i korridoren med yttermittfältaren ovanför sig.</li>
+            <li>Vi väljer den väg som är öppen – inte alltid samma.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Övningen ska innehålla målvakt, backar och verklig press, med syfte att spela igenom pressen. Alla ska träna att starta uppspelet, inte bara målvakten.</p>
+            <span class="etikett">Så vet vi att det sitter</span>
+            <p>Räkna hur många gånger vi tar oss ur egen tredjedel med bollen när vi spelar.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>3 · Driva bollen framåt och utmana</summary>
+      <div class="temainne">
+        <div class="when">v1–3 · januari · skede: Komma till avslut</div>
+        <p class="varfor">Vi behöver komma högre upp med laget. Driver vi bollen framåt och samtidigt rör oss utan boll framåt så skapar vi ytor då motståndarna tvingas backa, och vi får fler spelare i målytan och fler avslut.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Offensiv mitt håller bollen lite extra och letar vägen framåt.</li>
+            <li>Någon går på eget genombrott varje gång ytan finns.</li>
+            <li>I sista tredjedelen vågar vi. Där är det fritt fram att prova.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Övningen ska ge spelaren ytan framför sig och en motståndare att ta sig förbi. Utan motstånd blir det teknikträning, inte spelträning.</p>
+            <span class="etikett">Så vet vi att det sitter</span>
+            <p>I spel på träning: räkna <b>hur många olika spelare</b> som försöker driva bollen förbi en motståndare. Att tjugo provar och fem lyckas säger mer än att en lyckas tjugo gånger.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>4 · Inlägg och bemanning i målytan</summary>
+      <div class="temainne">
+        <div class="when">v4–6 · januari–februari · skede: Komma till avslut</div>
+        <p class="varfor">Ju fler vi är högt upp i planen och ju längre vi håller bollen där, desto fler lägen får vi att avsluta. Det här temat handlar om att fylla målytan och att våga hålla kvar bollen framme.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Tre punkter i målytan bemannade vid varje inlägg: främre stolpe, straffpunkt, bortre stolpe.</li>
+            <li>Aldrig två på samma punkt.</li>
+            <li>En fjärde utanför boxen som tar returen.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Övningen ska innehålla både den som slår och de som löper.</p>
+            <span class="etikett">Så vet vi att det sitter</span>
+            <p>I spel på träning: räkna inlägg, och hur många av dem som hade minst tre i målytan.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>5 · Omställning – kontring och återerövring</summary>
+      <div class="temainne">
+        <div class="when">v7–10 · februari–mars · skede: Omställning</div>
+        <p class="varfor">De två skeden som inträffar precis när bollen byter lag. Vi tränar dem tillsammans eftersom de är samma ögonblick sett från två håll.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Vinner vi bollen: yttermittfältare, offensiv mitt och forward startar löpningar direkt och springer förbi den som har bollen.</li>
+            <li>Tappar vi bollen: den närmast går på den, alla andra hem på rätt sida.</li>
+            <li>Sedan så nära att hon inte kan ta emot bollen och vända upp.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Övningen ska innehålla ett plötsligt ägarbyte och ett mål att springa mot åt båda håll. Annars tränas inte stressen.</p>
+
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>6 · 1 mot 1 och att möta fart</summary>
+      <div class="temainne">
+        <div class="when">v11–13 · mars · skede: Försvarsspel</div>
+        <p class="varfor">En motståndare som kommer i fart är alltid svår att möta. Lär vi oss det blir vi svåra att ta sig förbi. Det går att träna separat, till skillnad från den kollektiva försvarsorganisationen som vi coachar i spel varje vecka.</p>
+        <div class="tvakol">
+          <div>
+            <span class="etikett">Så syns det i spel</span>
+            <ul>
+            <li>Vi håller motståndaren på vår utsida och synlig framför oss.</li>
+            <li>Vi styr ut mot kanten i stället för att låta henne gå inåt.</li>
+            <li>Vi väljer medvetet mellan att gå på bollen och att fördröja.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="etikett">Kravet på övningen</span>
+            <p>Angriparen ska komma i fart, inte starta från stillastående. Försvararen ska behöva välja mellan att gå på bollen och att fördröja. Det är den situationen vi möter i match.</p>
+
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="tema">
+      <summary>7 · Öppet tema – repetition och helhet</summary>
+      <div class="temainne">
+        <div class="when">v14–17 · april · skede: Alla skeden</div>
+        <p class="varfor">Det sista temat är avsiktligt tomt. Tränargruppen väljer utifrån vad vi sett under vintern: antingen fördjupning i något som inte satt sig, eller allt ihop inför utomhussäsongen.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ÖVNINGAR -->
+<section id="ovningar">
+  <div class="wrap">
+    <div class="snum">04 — ÖVNINGAR</div>
+    <h2>Var vi hittar övningar</h2>
+
+    <div class="callout">
+      <p><b>Byt övning, inte tema</b></p>
+      <p>En övning som var svår att genomföra betyder inte att temat var fel. Notera i tränargruppen vilka övningar som fungerade. Efter en säsong har vi en egen bank som är värd mer än någon extern lista, eftersom den är testad på just de här spelarna.</p>
+    </div>
+
+    <ul class="drills">
+      <li><a href="https://ovningsbanken.svenskfotboll.se/fotboll/tranare/ovningsbanken/" target="_blank" rel="noopener">Övningsbanken<small>Svenska Fotbollförbundets egen bank. Gratis, kräver konto. Går att filtrera på spelform och skede, vilket gör den enklast att matcha mot våra teman</small></a></li>
+      <li><a href="https://sodermanland.svenskfotboll.se/4ae2d8/globalassets/distrikt/sodermanland/bilder/utbildning/spelarutbildning/ovningsbank-9-mot-9-.pdf" target="_blank" rel="noopener">Övningsbank 9 mot 9<small>Södermanlands FF. En PDF med övningar sorterade efter spelets skeden, framtagna just för 9 mot 9</small></a></li>
+      <li><a href="https://falsenine.se" target="_blank" rel="noopener">False Nine<small>Svensk app med över 120 övningar. Du kan spara favoriter och bygga egna pass. Gratis att ladda ner, alla funktioner kräver Premium för 39 kr i månaden</small></a></li>
+      <li><a href="https://zataraakademi.se/" target="_blank" rel="noopener">Zatara Fotbollsakademi<small>Gratis bank med korta beskrivningar. Kommersiell aktör, men övningarna är användbara</small></a></li>
+      <li><a href="https://svfa.se/forening/coaches-app/" target="_blank" rel="noopener">Coaches App<small>Kostar pengar, men har film på varje övning. Värd att titta på om tränargruppen behöver stöd i genomförandet</small></a></li>
+    </ul>
+
+    <h3>För tränargruppen</h3>
+    <ul class="drills">
+      <li><a href="https://share.articulate.com/mmtMgp99i7WqOAzXjMVyN" target="_blank" rel="noopener">Spelarutbildningsplanen 9 mot 9<small>Förbundets webbkurs. Alla i tränargruppen bör gå igenom den – den förklarar skedena och hur träning kopplas till match</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Planeringen bygger på</b></p>
+    <ul>
+      <li><a href="https://aktiva.svenskfotboll.se/tranare/spelarutbildning/spelarutbildningsplan/" target="_blank" rel="noopener">Svensk fotbolls spelarutbildningsplan</a></li>
+      <li><a href="https://aktiva.svenskfotboll.se/tranare/spelformer/" target="_blank" rel="noopener">Nationella spelformer 9 mot 9</a></li>
+      <li>Vår egen spelmodell för 9 mot 9</li>
+    </ul>
+    <p class="vidare"><b>Andra dokument</b></p>
+    <ul class="drills vidare-lista">
+      <li><a href="index.html">Startsidan<small>Översikt över lagets material</small></a></li>
+      <li><a href="spelmodell.html">Spelmodell 9 mot 9<small>Vårt spelsätt, rollerna och spelets skeden. För alla i laget.</small></a></li>
+    </ul>
+    <p class="uppdaterad">Senast uppdaterad 24 oktober 2026</p>
+  </div>
+</footer>
+
+<script>
+/* fäll ut alla teman i utskrift */
+window.addEventListener("beforeprint", () => {
+  document.querySelectorAll("details.tema").forEach(d => { d.dataset.v = d.open ? "1" : "0"; d.open = true; });
+});
+window.addEventListener("afterprint", () => {
+  document.querySelectorAll("details.tema").forEach(d => { d.open = d.dataset.v === "1"; });
+});
+</script>
+</body>
+</html>
